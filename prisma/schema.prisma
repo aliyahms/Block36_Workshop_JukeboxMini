@@ -13,11 +13,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Two table schemas
 model User {
   id        Int     @id @default(autoincrement())
   username  String
 
-  Playlist Playlist[]
+  playlists Playlist[] //One to many relation
 }
 
 model Playlist {
